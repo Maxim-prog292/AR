@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>AR in Web</title>
+  </head>
+  <body>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/three.js/build/ar.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/3.0.0/aframe/build/aframe-ar-nft.js"></script>
+    <a-scene embedded arjs>
+      <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
+      <a-marker preset="hiro">
+        <a-entity
+          position="0 0 0"
+          scale="1 1 1"
+          gltf-model="obj/scene.gltf"
+        ></a-entity>
+      </a-marker>
+      <a-entity camera></a-entity>
+    </a-scene>
+    <script>
+        var parameters = {
+            // size of the marker in meter
+            size: 1,
+            // type of marker - ['pattern', 'barcode', 'unknown' ]
+            type: "unknown",
+            // url of the pattern - IIF type='pattern'
+            patternUrl: null,
+            // value of the barcode - IIF type='barcode'
+            barcodeValue: null,
+            // change matrix mode - [modelViewMatrix, cameraTransformMatrix]
+            changeMatrixMode: "modelViewMatrix",
+            // turn on/off camera smoothing
+            smooth: true,
+            // number of matrices to smooth tracking over, more = smoother but slower follow
+            smoothCount: 5,
+            // distance tolerance for smoothing, if smoothThreshold # of matrices are under tolerance, tracking will stay still
+            smoothTolerance: 0.01,
+            // threshold for smoothing, will keep still unless enough matrices are over tolerance
+            smoothThreshold: 2
+        };
+        var parameters = {
+            // debug - true if one should display artoolkit debug canvas, false otherwise
+            debug: false,
+            // the mode of detection - ['color', 'color_and_matrix', 'mono', 'mono_and_matrix']
+            detectionMode: 'color_and_matrix',
+            // type of matrix code - valid iif detectionMode end with 'matrix' - [3x3, 3x3_HAMMING63, 3x3_PARITY65, 4x4, 4x4_BCH_13_9_3, 4x4_BCH_13_5_5]
+            matrixCodeType: '3x3',
+            // Pattern ratio for custom markers
+            patternRatio: 0.5,
+            // Labeling mode for markers - ['black_region', 'white_region']
+            // black_region: Black bordered markers on a white background, white_region: White bordered markers on a black background
+            labelingMode: 'black_region',
+
+            // url of the camera parameters
+            cameraParametersUrl: THREEx.ArToolkitContext.baseURL + '../data/data/camera_para.dat',
+
+            // tune the maximum rate of pose detection in the source image
+            maxDetectionRate: 60,
+            // resolution of at which we detect pose in the source image
+            canvasWidth: 640,
+            canvasHeight: 480,
+
+            // enable image smoothing or not for canvas copy - default to true
+            // https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/imageSmoothingEnabled
+            imageSmoothingEnabled : true,
+        }
+        var parameters = {
+            // type of source - ['webcam', 'image', 'video']
+            sourceType: "webcam",
+            // url of the source - valid if sourceType = image|video
+            sourceUrl: null,
+
+            // resolution of at which we initialize the source image
+            sourceWidth: 640,
+            sourceHeight: 480,
+            // resolution displayed for the source
+            displayWidth: 640,
+            displayHeight: 480
+            };
+    </script>
+  </body>
+</html>
