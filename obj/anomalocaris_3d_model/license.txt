@@ -1,0 +1,11 @@
+Model Information:
+* title:	Anomalocaris 3D Model
+* source:	https://sketchfab.com/3d-models/anomalocaris-3d-model-dad76e60589a41e18a42db1e979f81f8
+* author:	Skache (https://sketchfab.com/skache)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Anomalocaris 3D Model" (https://sketchfab.com/3d-models/anomalocaris-3d-model-dad76e60589a41e18a42db1e979f81f8) by Skache (https://sketchfab.com/skache) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
